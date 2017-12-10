@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 mainViewModel.onNewSearchTerm(s.toString())
-                resultsAdapter.dataset = mainViewModel.results
+                onViewModelUpdated()
             }
 
         })
@@ -37,5 +37,11 @@ class MainActivity : AppCompatActivity() {
         recyclerView.addItemDecoration(DividerItemDecoration(recyclerView.context,
                 (recyclerView.layoutManager as LinearLayoutManager).orientation))
         recyclerView.adapter = resultsAdapter
+        onViewModelUpdated()
+    }
+
+    private fun onViewModelUpdated() {
+        resultsAdapter.dataset = mainViewModel.results
+        message.text = mainViewModel.message
     }
 }
