@@ -11,6 +11,8 @@ class MainViewModel {
 
     var message = "Such nach etwas :-)"
         private set
+    var resultQuantityString = "-"
+        private set
     var results = emptyList<String>()
         private set
 
@@ -19,14 +21,27 @@ class MainViewModel {
         if (searchTerm.isBlank()) {
             results = emptyList()
             message = "Such nach etwas :-)"
+            resultQuantityString = "-"
             return
         }
 
+//        TODO NOW desired word length with optional
+        val desiredWordLength = searchTerm.toIntOrNull()
+        if (desiredWordLength != null) {
+            results = dataSet.filter { it.component2().count() == desiredWordLength }.map(this::entryToString)
+        } else {
 //        TODO TASK 1 filter and map to
-        results = dataSet.filter { it.component1().toLowerCase().contains(searchTerm.toLowerCase()) }
-                .map { "${it.component2()} (Deutsch: ${it.component1()})" }
+            results = dataSet.filter { it.component1().toLowerCase().contains(searchTerm.toLowerCase()) }
+                    .map { entryToString(it) }
+        }
+
+//        TODO TASK 4
+        resultQuantityString = results.size.toString()
         updateMessage()
     }
+
+    private fun entryToString(it: Map.Entry<String, String>) =
+            "${it.component2()} (Deutsch: ${it.component1()})"
 
     //    TODO TASK 3 update the message
     private fun updateMessage() {
@@ -39,7 +54,5 @@ class MainViewModel {
 
 //    TODO EXPLAIN ${}
 
-//    TODO NOW when
-//    TODO NOW optionals
-
+//    TODO NOW exercise -> make magic number/string to companion object constant
 }

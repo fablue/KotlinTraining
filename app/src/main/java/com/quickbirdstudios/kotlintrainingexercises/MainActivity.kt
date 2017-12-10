@@ -43,5 +43,6 @@ class MainActivity : AppCompatActivity() {
     private fun onViewModelUpdated() {
         resultsAdapter.dataset = mainViewModel.results
         message.text = mainViewModel.message
+        info.text = mainViewModel.resultQuantityString
     }
 }
