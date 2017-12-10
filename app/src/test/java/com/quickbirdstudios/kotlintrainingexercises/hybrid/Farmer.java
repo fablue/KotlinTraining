@@ -21,6 +21,8 @@ public class Farmer {
     }
 
     public void ride(Horse horse) {
+        // Nobody checks for null here
+
         System.out.println("Farmer reitet auf einem Pferd");
     }
 }
