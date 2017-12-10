@@ -63,7 +63,6 @@
                 android:layout_toStartOf="@+id/info"
                 android:layout_centerVertical="true"
                 android:paddingEnd="@dimen/padding_small"
-                android:paddingStart="@dimen/padding_small"
                 android:paddingBottom="@dimen/padding_small"
                 android:text="Message"
                 android:ellipsize="end"
