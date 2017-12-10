@@ -10,7 +10,12 @@ import android.widget.TextView
  * Created by Malte Bucksch on 10/12/2017.
  */
 
-class ResultsAdapter(private val mDataset: Array<String>) : RecyclerView.Adapter<ResultsAdapter.ViewHolder>() {
+class ResultsAdapter(dataSet: List<String>) : RecyclerView.Adapter<ResultsAdapter.ViewHolder>() {
+    var dataset = dataSet
+        set(dataSet) {
+            field = dataSet
+            notifyDataSetChanged()
+        }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var textView: TextView = view.findViewById(R.id.resultText)
@@ -18,11 +23,11 @@ class ResultsAdapter(private val mDataset: Array<String>) : RecyclerView.Adapter
 
     override fun onCreateViewHolder(parent: ViewGroup,
                                     viewType: Int): ResultsAdapter.ViewHolder = ViewHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_result, parent, false))
+            .inflate(R.layout.item_result, parent, false))
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.textView.text = mDataset[position]
+        holder.textView.text = dataset[position]
     }
 
-    override fun getItemCount() = mDataset.size
+    override fun getItemCount() = dataset.size
 }

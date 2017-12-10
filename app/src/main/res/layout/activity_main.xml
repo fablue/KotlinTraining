@@ -37,6 +37,7 @@
                     android:imeOptions="actionSearch"
                     android:inputType="textNoSuggestions"
                     android:lines="1"
+                    android:id="@+id/searchField"
                     android:padding="@dimen/padding_small"
                     android:text="" />
 
