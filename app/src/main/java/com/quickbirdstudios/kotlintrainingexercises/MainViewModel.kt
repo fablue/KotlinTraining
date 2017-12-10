@@ -25,7 +25,6 @@ class MainViewModel {
             return
         }
 
-//        TODO NOW desired word length with optional
         val desiredWordLength = searchTerm.toIntOrNull()
         if (desiredWordLength != null) {
             results = dataSet.filter { it.component2().count() == desiredWordLength }.map(this::entryToString)
