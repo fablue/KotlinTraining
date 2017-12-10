@@ -19,4 +19,8 @@ public class Farmer {
         horse.eat(FOOD_CARROTS);
         horse.eat(FOOD_APPLE);
     }
+
+    public void ride(Horse horse) {
+        System.out.println("Farmer reitet auf einem Pferd");
+    }
 }

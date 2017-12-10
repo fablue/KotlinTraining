@@ -32,4 +32,9 @@ public class AnimalRanchTest {
         Horse horse4 = animalRanch.searchForAnimalInStall(4);
         farmer.feed(horse4);
     }
+
+    @Test
+    public void testRideHorse() throws Exception {
+        farmer.ride(animalRanch.searchForAnimalInStall(1));
+    }
 }
