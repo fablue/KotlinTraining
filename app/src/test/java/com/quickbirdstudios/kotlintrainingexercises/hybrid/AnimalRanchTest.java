@@ -19,6 +19,16 @@ public class AnimalRanchTest {
     }
 
     @Test
+    public void testKotlinCowCreation() throws Exception {
+        KotlinCow kotlinCow = new KotlinCow();
+        kotlinCow.eat("Getreide");
+
+//      DOES NOT COMPILE WITHOUT ANNOTATION
+//      kotlinCow.eat();
+        throw new RuntimeException("Uncomment this and make it compile using @JvmOverloads");
+    }
+
+    @Test
     public void testFeedingOfAnimals() throws Exception {
         Horse horse1 = animalRanch.searchForAnimalInStall(1);
         farmer.feed(horse1);
