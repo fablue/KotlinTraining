@@ -36,5 +36,6 @@ public class AnimalRanchTest {
     @Test
     public void testRideHorse() throws Exception {
         farmer.ride(animalRanch.searchForAnimalInStall(1));
+        farmer.ride(null);
     }
 }
