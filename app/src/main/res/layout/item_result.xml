@@ -9,5 +9,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/resultText"
         android:padding="@dimen/padding_medium"
+        android:background="?android:attr/selectableItemBackground"
         tools:text="result text"/>
 </RelativeLayout>

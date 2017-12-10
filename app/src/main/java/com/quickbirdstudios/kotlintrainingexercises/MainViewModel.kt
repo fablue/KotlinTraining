@@ -39,6 +39,9 @@ class MainViewModel {
         updateMessage()
     }
 
+    //    TODO TASK 5
+    fun getExclamationOf(animal: String) = "Wufff!"
+
     private fun entryToString(it: Map.Entry<String, String>) =
             "${it.component2()} (Deutsch: ${it.component1()})"
 

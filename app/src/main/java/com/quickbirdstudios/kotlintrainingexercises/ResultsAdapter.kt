@@ -11,6 +11,8 @@ import android.widget.TextView
  */
 
 class ResultsAdapter(dataSet: List<String>) : RecyclerView.Adapter<ResultsAdapter.ViewHolder>() {
+    var onItemClickListener: ((String) -> Unit)? = null
+
     var dataset = dataSet
         set(dataSet) {
             field = dataSet
@@ -27,6 +29,7 @@ class ResultsAdapter(dataSet: List<String>) : RecyclerView.Adapter<ResultsAdapte
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.textView.text = dataset[position]
+        holder.itemView.setOnClickListener { onItemClickListener?.invoke(dataset[position]) }
     }
 
     override fun getItemCount() = dataset.size

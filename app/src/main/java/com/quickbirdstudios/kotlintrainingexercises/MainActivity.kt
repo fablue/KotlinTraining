@@ -1,6 +1,7 @@
 package com.quickbirdstudios.kotlintrainingexercises
 
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
@@ -32,6 +33,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
+        resultsAdapter.onItemClickListener = {
+            Snackbar.make(recyclerView, mainViewModel.getExclamationOf(it), Snackbar.LENGTH_SHORT).show()
+        }
+
         recyclerView.setHasFixedSize(true)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.addItemDecoration(DividerItemDecoration(recyclerView.context,
