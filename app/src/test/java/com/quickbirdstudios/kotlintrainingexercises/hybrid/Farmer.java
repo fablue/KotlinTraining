@@ -25,4 +25,14 @@ public class Farmer {
 
         System.out.println("Farmer reitet auf einem Pferd");
     }
+
+    public void callForHorse(Horse horse) {
+        if (horse == null) {
+            System.out.println("Ein nicht-vorhandenes Pferd kann ich nicht rufen.");
+            return;
+        }
+
+        String callPhrase = horse.getName() + ", wo bist du?";
+        System.out.println(StringUtils.screamify(callPhrase));
+    }
 }
