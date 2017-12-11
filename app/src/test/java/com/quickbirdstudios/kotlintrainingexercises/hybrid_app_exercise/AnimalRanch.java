@@ -1,4 +1,4 @@
-package com.quickbirdstudios.kotlintrainingexercises.hybrid;
+package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.quickbirdstudios.kotlintrainingexercises.hybrid;
+package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise;
 
 import org.junit.Before;
 import org.junit.Test;

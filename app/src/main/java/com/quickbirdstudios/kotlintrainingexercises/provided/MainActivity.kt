@@ -1,4 +1,4 @@
-package com.quickbirdstudios.kotlintrainingexercises
+package com.quickbirdstudios.kotlintrainingexercises.provided
 
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -7,6 +7,8 @@ import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.text.Editable
 import android.text.TextWatcher
+import com.quickbirdstudios.kotlintrainingexercises.MainViewModel
+import com.quickbirdstudios.kotlintrainingexercises.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +25,8 @@ class MainActivity : AppCompatActivity() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                mainViewModel.onNewSearchTerm(s.toString())
+                mainViewModel.onSearchTermChanged(s.toString())
+                mainViewModel.onResultListUpdated()
                 onViewModelUpdated()
             }
 
@@ -34,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         resultsAdapter.onItemClickListener = {
-            Snackbar.make(recyclerView, mainViewModel.getExclamationOf(it), Snackbar.LENGTH_SHORT).show()
+            Snackbar.make(recyclerView, mainViewModel.getAnimalSoundOf(mainViewModel.dataSet[it]), Snackbar.LENGTH_SHORT).show()
         }
 
         recyclerView.setHasFixedSize(true)

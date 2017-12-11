@@ -1,4 +1,4 @@
-package com.quickbirdstudios.kotlintrainingexercises.hybrid;
+package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise;
 
 /**
  * Created by Malte Bucksch on 10/12/2017.

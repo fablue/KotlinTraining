@@ -5,9 +5,15 @@ package com.quickbirdstudios.kotlintrainingexercises
  */
 
 class MainViewModel {
-    private val dataSet = mapOf("Hund" to "dog", "Katze" to "cat", "Hase" to "rabbit"
-            , "Maus" to "mouse", "Wal" to "whale"
-            , "Pferd" to "horse", "Affe" to "monkey")
+    val dataSet = listOf(AnimalEntry("Hund", "dog"),
+            AnimalEntry("Katze", "cat"),
+            AnimalEntry("Hase", "rabbit"),
+            AnimalEntry("Ratte", "rat"),
+            AnimalEntry("Maus", "mouse"),
+            AnimalEntry("Elefant", "elephant"),
+            AnimalEntry("Wal", "whale"),
+            AnimalEntry("Pferd", "horse"),
+            AnimalEntry("Affe", "monkey"))
 
     var message = "Such nach etwas :-)"
         private set
@@ -16,37 +22,44 @@ class MainViewModel {
     var results = emptyList<String>()
         private set
 
-    fun onNewSearchTerm(searchTerm: String) {
-//        TODO TASK 2 show empty list if searchTerm is empty (blank)
-        if (searchTerm.isBlank()) {
+    fun onSearchTermChanged(newSearchTerm: String) {
+        //  TODO TASK 4 update the "results" based on the search term.
+        //  TODO first check which "AnimalEntry"s match the "newSearchTerm"
+        //  TODO put "AnimalEntry.toString" to the results, if it matches
+        //  HINT if you want a concise, functional solution:  "filter" and "map" are very useful
+
+        //  TODO TASK 5 if "newSearchTerm" is empty (blank), show an empty "results" list
+
+        //  TODO TASK 6 if the "newSearchTerm" is a number: show all animals whose "english" word has less or equals characters than the typed number
+        //  TODO example: newSearchTerm == 4, results -> "cat","rat"
+        //  HINT use "toIntOrNull()" to convert string to number
+
+        //  TODO TASK 7 show the number of results by putting them into "resultQuantityString"
+        //  TODO show "-" if no result was found
+
+        if (newSearchTerm.isBlank()) {
             results = emptyList()
-            message = "Such nach etwas :-)"
             resultQuantityString = "-"
             return
         }
 
-        val desiredWordLength = searchTerm.toIntOrNull()
+        val desiredWordLength = newSearchTerm.toIntOrNull()
         if (desiredWordLength != null) {
-            results = dataSet.filter { it.component2().count() == desiredWordLength }.map(this::entryToString)
+            results = dataSet.filter { it.getEnglishWordLength() <= desiredWordLength }.map { it.toString() }
         } else {
-//        TODO TASK 1 filter and map to
-            results = dataSet.filter { it.component1().toLowerCase().contains(searchTerm.toLowerCase()) }
-                    .map { entryToString(it) }
+            results = dataSet.filter { it.matchesSearchTerm(newSearchTerm) }
+                    .map { it.toString() }
         }
 
-//        TODO TASK 4
         resultQuantityString = results.size.toString()
-        updateMessage()
     }
 
-    //    TODO TASK 5
-    fun getExclamationOf(animal: String) = "Wufff!"
-
-    private fun entryToString(it: Map.Entry<String, String>) =
-            "${it.component2()} (Deutsch: ${it.component1()})"
-
-    //    TODO TASK 3 update the message
-    private fun updateMessage() {
+    // TODO TASK 8 update the message to represent the new result list
+    // TODO if empty -> return "Kein Ergebnisse"
+    // TODO if 1-3 results -> return "Eins davon sollte passen"
+    // TODO if more than 3 results -> return "Viel zu viele Ergebnisse"
+    // HINT use "when" keyword
+    fun onResultListUpdated() {
         message = when (results.count()) {
             0 -> "Kein Ergebnisse"
             in 1..3 -> "Eins davon sollte passen"
@@ -54,5 +67,7 @@ class MainViewModel {
         }
     }
 
-//    TODO NOW EXPLAIN ${}
+    // TODO TASK 9 add a property "sound" to "AnimalEntry", and return the sound here
+    // TODO e.g. "Miaooo" for a cat
+    fun getAnimalSoundOf(animal: AnimalEntry) = "Wufff!"
 }
