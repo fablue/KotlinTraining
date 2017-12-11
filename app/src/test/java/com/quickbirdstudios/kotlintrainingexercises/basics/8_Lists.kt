@@ -1,6 +1,6 @@
 package com.quickbirdstudios.kotlintrainingexercises.basics
 
-import com.quickbirdstudios.kotlinintro.exercises.Dog
+import com.quickbirdstudios.kotlinbasics.Dog
 import org.junit.Assert.*
 import org.junit.Test
 

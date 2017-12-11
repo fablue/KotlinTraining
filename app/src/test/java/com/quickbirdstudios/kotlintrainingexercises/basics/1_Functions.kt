@@ -8,17 +8,27 @@ import org.junit.Test
  */
 class Functions {
 //    TODO TASK 1 create a function "helloWorld" which prints "helloWorld"
-//    TODO TASK 2 add a parameter "worldName" to the function with default value "world"
-//    TODO TASK 3 print "Hello <WORLD-NAME>" using worldName parameter instead of <WORLD-NAME> (HINT: use "$" for string interpolation)
 
     //TODO NOW solutions
-    fun helloWorld(worldName: String) {
-        print("Hello $worldName")
+    fun helloWorld() {
+        print("Hello world")
     }
 
     @Test
-    fun testBarkFunction() {
-        //    TODO TASK 4 execute and run the function "helloWorld" here
+    fun testHelloWorld() {
+        //    TODO TASK 2 execute and run the function "helloWorld" here
+        TODO("Please implement the task :-)")
+    }
+
+    //    TODO TASK 3 set default value "1" for the "times" parameter
+    fun sayMerryChristmas(times: Int){
+        println("Merry Christmas".repeat(times))
+    }
+
+    @Test
+    fun testMerryChristmas() {
+        //    TODO TASK 4 execute and run the function "sayMerryChristmas" and pass "3" for "times"
+        //    TODO TASK 5 execute and run the function "sayMerryChristmas" and pass nothing for "times"
         TODO("Please implement the task :-)")
     }
 }

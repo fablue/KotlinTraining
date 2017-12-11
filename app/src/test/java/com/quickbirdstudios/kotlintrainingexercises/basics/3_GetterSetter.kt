@@ -7,7 +7,7 @@ import org.junit.Test
  * Created by Malte Bucksch on 05/11/2017.
  */
 
-class Dog(name: String, val type: String = "Labrador", var age: Int = 5) {
+class KotlinDog(name: String, val type: String = "Labrador", var age: Int = 5) {
     //    TODO TASK 1 create getter for "name" which returns the name as upperCaste (HINT: xxx.toUpperCase())
     //    TODO TASK 2 create setter for name. Throw an IllegalArgumentException if name is empty
     var name = name
@@ -26,7 +26,7 @@ class Dog(name: String, val type: String = "Labrador", var age: Int = 5) {
   Do not worry about the part below!
    */
 class DogGetterSetter {
-    private val dog = Dog("bruno", "Labrador");
+    private val dog = KotlinDog("bruno", "Labrador");
 
     @Test
     fun testDogNameIsCapitalized() {
