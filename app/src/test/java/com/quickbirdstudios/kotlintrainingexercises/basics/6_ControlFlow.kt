@@ -1,7 +1,7 @@
 package com.quickbirdstudios.kotlinbasics.exercises
 
 import com.quickbirdstudios.kotlinbasics.Dog
-import org.junit.Assert.assertEquals
+import org.junit.Assert.*
 import org.junit.Test
 
 /**
@@ -25,8 +25,17 @@ class ControlFlow {
         TODO("Please implement the task :-)")
     }
 
+    //  TODO TASK 3 use "for" to check if any of the dogs in the list is a baby dog
+    //  TODO a baby dog is a dog which is younger than 2 years old
+    //  TODO return true if a baby dog was found
+//    TODO NOW solution, and add to slides
+    fun hasAnyBabyDog(dogs: List<Dog>): Boolean {
+        for (dog in dogs) {
+            if (dog.age <= 1)return true
+        }
 
-
+        return false
+    }
 
 
     /*
@@ -34,9 +43,9 @@ class ControlFlow {
      */
     @Test
     fun testOwnerNameIsCorrect() {
-        assertEquals("Baby Dog", ageToString(Dog("Bruno",age = 1)))
-        assertEquals("Normal Dog", ageToString(Dog("Ignatz",age = 5)))
-        assertEquals("Old Dog", ageToString(Dog("Balu",age = 13)))
+        assertEquals("Baby Dog", ageToString(Dog("Bruno", age = 1)))
+        assertEquals("Normal Dog", ageToString(Dog("Ignatz", age = 5)))
+        assertEquals("Old Dog", ageToString(Dog("Balu", age = 13)))
     }
 
     @Test
@@ -44,5 +53,11 @@ class ControlFlow {
         assertEquals("Hans", findDogOwnerName(Dog("Bruno")))
         assertEquals("Peter", findDogOwnerName(Dog("Ignatz")))
         assertEquals(null, findDogOwnerName(Dog("Balu")))
+    }
+
+    @Test
+    fun testHasAnyBabyDog() {
+        assertTrue(hasAnyBabyDog(listOf(Dog("Tom",age = 5),Dog("Tom",age = 1))))
+        assertFalse(hasAnyBabyDog(listOf(Dog("Tom",age = 5),Dog("Tom",age = 7),Dog("Tom",age = 9))))
     }
 }

@@ -54,7 +54,5 @@ class MainViewModel {
         }
     }
 
-//    TODO EXPLAIN ${}
-
-//    TODO NOW exercise -> make magic number/string to companion object constant
+//    TODO NOW EXPLAIN ${}
 }
