@@ -30,7 +30,7 @@ class ControlFlow {
 
 
     /*
-    Do not worry about the part belwo
+    Do not worry about the part below
      */
     @Test
     fun testOwnerNameIsCorrect() {
