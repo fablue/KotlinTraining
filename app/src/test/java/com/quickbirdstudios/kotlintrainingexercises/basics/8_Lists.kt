@@ -43,7 +43,6 @@ class DogHospital {
 }
 
 
-
 /*
     Do not worry about the part below!
      */
