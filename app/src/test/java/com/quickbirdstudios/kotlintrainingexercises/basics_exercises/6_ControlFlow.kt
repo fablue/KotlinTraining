@@ -25,9 +25,9 @@ class ControlFlow {
         TODO("Please implement the task :-)")
     }
 
-    //  TODO TASK 3 use "for" to check if any of the dogs in the list is a baby dog
+    //  TODO TASK 3 use a "for"-loop to check if any of the dogs in the list is a baby dog
     //  TODO a baby dog is a dog which is younger than 2 years old
-    //  TODO return true if a baby dog was found
+    //  TODO return true if a baby dog was found, false otherwise
 //    TODO NOW solution, and add to slides
     fun hasAnyBabyDog(dogs: List<Dog>): Boolean {
         for (dog in dogs) {

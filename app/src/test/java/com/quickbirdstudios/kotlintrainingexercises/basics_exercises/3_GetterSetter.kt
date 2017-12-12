@@ -8,17 +8,16 @@ import org.junit.Test
  */
 
 class KotlinDog(name: String, val type: String = "Labrador", var age: Int = 5) {
-    //    TODO TASK 1 create getter for "name" which returns the name as upperCaste (HINT: xxx.toUpperCase())
-    //    TODO TASK 2 create setter for name. Throw an IllegalArgumentException if name is empty
+    //    TODO TASK 1 create getter for "name" which returns the name as upperCase/all-caps (HINT: myText.toUpperCase())
+    //    TODO TASK 2 create setter for name: Throw an "IllegalArgumentException" if the new name is empty
+    //    HINT: throwing exceptions happens like in java with `throw IllegalArgumentException(...)`
     var name = name
+        get() = field.toUpperCase()
+        set(newName) {
+            if (newName.isEmpty()) throw IllegalArgumentException()
 
-    fun bark(times: Int = 3) {
-        println("wufff".repeat(times))
-    }
-
-    fun sayHello(): String {
-        return "Hey my name is $name"
-    }
+            field = newName
+        }
 }
 
 
@@ -30,7 +29,7 @@ class DogGetterSetter {
 
     @Test
     fun testDogNameIsCapitalized() {
-        assertEquals("Bruno", dog.name)
+        assertEquals("BRUNO", dog.name)
     }
 
     @Test(expected = IllegalArgumentException::class)
