@@ -8,18 +8,18 @@ import java.util.List;
  */
 
 public class AnimalRanch {
-    private List<Horse> animals = new ArrayList<>();
+    private List<Animal> animals = new ArrayList<>();
 
-    public void addAnimal(Horse horse) {
-        animals.add(horse);
+    public void addAnimal(Animal animal) {
+        animals.add(animal);
     }
 
-    public void removeAnimal(Horse horse) {
-        animals.remove(horse);
+    public void removeAnimal(Animal animal) {
+        animals.remove(animal);
     }
 
-    public Horse searchForAnimalInStall(int stallNumber) {
-        if (stallNumber > 0 && stallNumber < animals.size()) return animals.get(stallNumber - 1);
+    public Animal getAnimalAtBox(int boxNumber) {
+        if (boxNumber > 0 && boxNumber < animals.size()) return animals.get(boxNumber - 1);
 
         return null;
     }

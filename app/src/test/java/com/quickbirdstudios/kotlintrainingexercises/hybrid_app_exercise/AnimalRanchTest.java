@@ -1,6 +1,8 @@
 package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise;
 
+import com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin.Animal;
 import com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin.AnimalRanch;
+import com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin.Chicken;
 import com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin.Farmer;
 import com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin.Horse;
 
@@ -12,34 +14,39 @@ import org.junit.Test;
  */
 
 public class AnimalRanchTest {
-    private Farmer farmer = new Farmer();
-    private AnimalRanch animalRanch = new AnimalRanch();
+
 
     @Before
     public void setUp() {
+
+    }
+
+    @Test
+    public void runAnimalRanchExample() throws Exception {
+        Farmer farmer = new Farmer();
+        AnimalRanch animalRanch = new AnimalRanch();
+
         animalRanch.addAnimal(new Horse("Ginger"));
         animalRanch.addAnimal(new Horse("Nacho"));
         animalRanch.addAnimal(new Horse("Amigo"));
-    }
+        animalRanch.addAnimal(new Chicken("Rudi"));
 
-    @Test
-    public void testFeedingOfAnimals() throws Exception {
-        Horse horse1 = animalRanch.searchForAnimalInStall(1);
-        farmer.feed(horse1);
+        Animal animal = animalRanch.getAnimalAtBox(1);
 
-        Horse horse2 = animalRanch.searchForAnimalInStall(2);
-        farmer.feed(horse2);
+        farmer.callForAnimal(animal);
 
-        Horse horse3 = animalRanch.searchForAnimalInStall(3);
-        farmer.feed(horse3);
+        animal.eat();
+        animal.eat(null);
+        animal.eat(Farmer.FOOD_HAY);
 
-        Horse horse4 = animalRanch.searchForAnimalInStall(4);
-        farmer.feed(horse4);
-    }
+        if (animal instanceof Horse) {
+            Horse horse = (Horse) animal;
 
-    @Test
-    public void testRideHorse() throws Exception {
-        farmer.ride(animalRanch.searchForAnimalInStall(1));
-        farmer.ride(null);
+            farmer.feedHorse(horse);
+            farmer.feedHorse(null);
+
+            farmer.ride(horse);
+            farmer.ride(null);
+        }
     }
 }
