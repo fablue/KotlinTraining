@@ -11,34 +11,47 @@ import org.junit.Test
 
 
 class DogHospital {
-//        TODO TASK 1 create "waitingDogs" list property (private) and initialize it with an emtpy list
+    //  TODO TASK 1 create a "waitingDogs" list property (private)
+//  TODO TASK initialize it with an emtpy list using "mutableListOf<...>(...)"
+    private val waitingDogs = mutableListOf<Dog>()
 
     fun getWaitingDogsCount(): Int {
         // TODO TASK 2 return the number of "waitingDogs"
-        TODO("Please implement the task :-)")
+        return waitingDogs.size
     }
 
     fun addToWaitingQueue(dog: Dog) {
 //        TODO TASK 3 add dog to "waitingDogs"
-        TODO("Please implement the task :-)")
+//        TODO("Please implement the task :-)")
+        waitingDogs.add(dog)
     }
 
     fun treatNextDog() {
-        // TODO TASK 4 remove first dog of "waitingDogs" if there are dogs waiting
-        TODO("Please implement the task :-)")
+        // TODO TASK 4 remove first dog of "waitingDogs"
+        // TODO if "waitingDogs" is empty -> do nothing
+//        TODO("Please implement the task :-)")
+        if (!waitingDogs.isEmpty()) waitingDogs.removeAt(0)
     }
 
     fun getDogAtPosition(position: Int): Dog? {
-        // TODO TASK 5 return the dog at the "position". If no dog is found at the position, return null
-        TODO("Please implement the task :-)")
+        // TODO TASK 5 return the dog at the "position"
+        // TODO If no dog is found at the position, please return null
+//        TODO("Please implement the task :-)")
+        return waitingDogs.getOrNull(position)
     }
 
     override fun toString(): String {
         // TODO TASK 6 return a string of the dog queue including the positions and "name" of the dogs
-        // example: "(0,Rex),(1,Daisy),(2,Sandra)"
+        // TODO result string example: " (0,Rex),(1,Daisy),(2,Sandra) "
         // HINT use for loop and "withIndex()"
-        TODO("Please implement the task :-)")
-
+        // HINT check the index, to insert the "," only at the correct positions (-> no "," at the end or the beginning)
+//        TODO("Please implement the task :-)")
+        var resultString = ""
+        for ((index, dog) in waitingDogs.withIndex()) {
+            resultString += "($index,${dog.name})"
+            if (index < waitingDogs.size - 1) resultString += ","
+        }
+        return resultString;
     }
 }
 

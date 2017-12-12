@@ -18,7 +18,7 @@ fun getCopyOf(apple: Apple): Apple {
 }
 
 fun getBiggerApple(originalApple: Apple): Apple {
-    //TODO TASK 2 return a copy of the apple which is slightly bigger (size + 1)
+    //TODO TASK 3 return a copy of the apple which is slightly bigger (size + 1)
     return originalApple.copy(size = originalApple.size + 1)
 }
 
