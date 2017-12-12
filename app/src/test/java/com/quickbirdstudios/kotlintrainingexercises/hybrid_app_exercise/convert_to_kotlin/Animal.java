@@ -11,10 +11,8 @@ public abstract class Animal {
         this.name = name;
     }
 
-    public abstract void eat(String food);
-
-    public void eat(){
-        eat(null);
+    public void eat(String food) {
+        System.out.println(name + " isst " + food + "...");
     }
 
     public String getName() {

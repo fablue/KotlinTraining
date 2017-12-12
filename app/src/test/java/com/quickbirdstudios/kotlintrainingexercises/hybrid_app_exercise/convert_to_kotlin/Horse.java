@@ -5,17 +5,23 @@ package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert
  */
 
 public class Horse extends Animal {
-    public Horse(String name) {
+    private int maxRunningSpeed;
+
+    public Horse(String name, int maxRunningSpeed) {
         super(name);
+
+        this.maxRunningSpeed = maxRunningSpeed;
     }
 
-    @Override
-    public void eat(String food) {
-        if (food == null) {
-            System.out.println(name + " isst Gras auf der Weide");
-            return;
-        }
+    public Horse(String name) {
+        this(name,10);
+    }
 
-        System.out.println(name + " isst " + food + "...");
+    public int getMaxRunningSpeed() {
+        return maxRunningSpeed;
+    }
+
+    public void setMaxRunningSpeed(int maxRunningSpeed) {
+        this.maxRunningSpeed = maxRunningSpeed;
     }
 }

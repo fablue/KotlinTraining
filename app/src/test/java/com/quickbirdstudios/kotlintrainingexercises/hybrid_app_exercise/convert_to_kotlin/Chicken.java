@@ -9,16 +9,6 @@ public class Chicken extends Animal {
         super(name);
     }
 
-    @Override
-    public void eat(String food) {
-        if (food == null) {
-            System.out.println(name + " isst Körner am Boden");
-            return;
-        }
-
-        System.out.println(name + " isst " + food + "...");
-    }
-
     public void giveEgg() {
         System.out.println("Das Huhn brütet ein Ei.");
     }

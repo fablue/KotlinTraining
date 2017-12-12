@@ -10,21 +10,11 @@ public class Farmer {
     public final static String FOOD_WORM = "Würmer";
 
     public void feedHorse(Horse horse) {
-        if (horse == null) {
-            System.out.println("Ein nicht-vorhandenes Pferd kann ich nicht füttern.");
-            return;
-        }
-
         horse.eat(FOOD_HAY);
         horse.eat(FOOD_APPLE);
     }
 
     public void feedChicken(Chicken chicken) {
-        if (chicken == null) {
-            System.out.println("Ein nicht-vorhandenes Huhn kann ich nicht füttern.");
-            return;
-        }
-
         chicken.eat(FOOD_WORM);
     }
 

@@ -10,6 +10,13 @@ import java.util.List;
 public class AnimalRanch {
     private List<Animal> animals = new ArrayList<>();
 
+    public AnimalRanch() {
+        addAnimal(new Horse("Ginger"));
+        addAnimal(new Horse("Nacho",5));
+        addAnimal(new Horse("Amigo"));
+        addAnimal(new Chicken("Rudi"));
+    }
+
     public void addAnimal(Animal animal) {
         animals.add(animal);
     }

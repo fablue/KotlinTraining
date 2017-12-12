@@ -25,28 +25,25 @@ public class AnimalRanchTest {
     public void runAnimalRanchExample() throws Exception {
         Farmer farmer = new Farmer();
         AnimalRanch animalRanch = new AnimalRanch();
-
-        animalRanch.addAnimal(new Horse("Ginger"));
-        animalRanch.addAnimal(new Horse("Nacho"));
-        animalRanch.addAnimal(new Horse("Amigo"));
-        animalRanch.addAnimal(new Chicken("Rudi"));
-
         Animal animal = animalRanch.getAnimalAtBox(1);
+        Animal animal2 = animalRanch.getAnimalAtBox(3);
 
         farmer.callForAnimal(animal);
-
-        animal.eat();
-        animal.eat(null);
-        animal.eat(Farmer.FOOD_HAY);
 
         if (animal instanceof Horse) {
             Horse horse = (Horse) animal;
 
             farmer.feedHorse(horse);
-            farmer.feedHorse(null);
-
             farmer.ride(horse);
+
+            // let's give this java class a null value to handle
             farmer.ride(null);
+        }
+
+        if (animal2 instanceof Chicken) {
+            Chicken chicken = (Chicken) animal;
+
+            farmer.feedChicken(chicken);
         }
     }
 }
