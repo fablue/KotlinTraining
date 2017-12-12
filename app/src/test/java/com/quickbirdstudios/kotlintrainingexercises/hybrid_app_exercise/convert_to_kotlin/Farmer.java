@@ -1,4 +1,4 @@
-package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise;
+package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin;
 
 /**
  * Created by Malte Bucksch on 10/12/2017.
@@ -23,7 +23,7 @@ public class Farmer {
     public void ride(Horse horse) {
         // Nobody checks for null here
 
-        System.out.println("Farmer reitet auf einem Pferd");
+        System.out.println("Farmer reitet auf "+horse);
     }
 
     public void callForHorse(Horse horse) {

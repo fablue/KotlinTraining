@@ -1,5 +1,9 @@
 package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise;
 
+import com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin.AnimalRanch;
+import com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin.Farmer;
+import com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin.Horse;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,16 +20,6 @@ public class AnimalRanchTest {
         animalRanch.addAnimal(new Horse("Ginger"));
         animalRanch.addAnimal(new Horse("Nacho"));
         animalRanch.addAnimal(new Horse("Amigo"));
-    }
-
-    @Test
-    public void testKotlinCowCreation() throws Exception {
-        KotlinCow kotlinCow = new KotlinCow();
-        kotlinCow.eat("Getreide");
-
-//      DOES NOT COMPILE WITHOUT ANNOTATION
-//      kotlinCow.eat();
-        throw new RuntimeException("Uncomment this and make it compile using @JvmOverloads");
     }
 
     @Test

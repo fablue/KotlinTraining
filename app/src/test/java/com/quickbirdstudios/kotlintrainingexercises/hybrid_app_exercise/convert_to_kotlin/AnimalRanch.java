@@ -1,4 +1,4 @@
-package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise;
+package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,8 @@ public class AnimalRanch {
     }
 
     public Horse searchForAnimalInStall(int stallNumber) {
-        return animals.size() >= stallNumber && stallNumber > 0 ? animals.get(stallNumber - 1) : null;
+        if (stallNumber > 0 && stallNumber < animals.size()) return animals.get(stallNumber - 1);
+
+        return null;
     }
 }

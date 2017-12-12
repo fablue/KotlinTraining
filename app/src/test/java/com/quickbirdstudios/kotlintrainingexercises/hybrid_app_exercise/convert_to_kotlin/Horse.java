@@ -1,4 +1,4 @@
-package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise;
+package com.quickbirdstudios.kotlintrainingexercises.hybrid_app_exercise.convert_to_kotlin;
 
 /**
  * Created by Malte Bucksch on 10/12/2017.
@@ -22,5 +22,10 @@ public class Horse {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
