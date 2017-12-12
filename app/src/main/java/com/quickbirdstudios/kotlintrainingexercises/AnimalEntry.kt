@@ -6,19 +6,13 @@ package com.quickbirdstudios.kotlintrainingexercises
  */
 class AnimalEntry(val german: String, val english: String) {
     //    TODO TASK 1 override "toString" for displaying an AnimalEntry in the list (put both English and German in the string)
-//    HINT the "$" operator is useful here
-    override fun toString(): String {
-        return "$english (Deutsch: $german)"
-    }
+    //    HINT the "$" operator is useful here
 
-    //    TODO TASK 2 return true if the "german" contains the searchTerm
-//    HINT for case-insensitive search: the function "toLowerCase()" is useful
-    fun matchesSearchTerm(searchTerm: String): Boolean {
-        return german.toLowerCase().contains(searchTerm.toLowerCase());
-    }
+    //    TODO TASK 1 create function "matchesSearchTerm(searchTerm: String): Boolean"
+    //    TODO return true if the "german" contains the searchTerm
+    //    HINT for case-insensitive search: the function "toLowerCase()" is useful
 
-    //    TODO TASK 3 return the number of characters in the "english" word
-    fun getEnglishWordLength(): Int {
-        return english.count()
-    }
+    //    TODO TASK 3 create function "getEnglishWordLength(): String"
+    //    TODO return the number of characters in the "english" word
+
 }

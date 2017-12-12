@@ -36,38 +36,19 @@ class MainViewModel {
 
         //  TODO TASK 7 show the number of results by putting them into "resultQuantityString"
         //  TODO show "-" if no result was found
-
-        if (newSearchTerm.isBlank()) {
-            results = emptyList()
-            resultQuantityString = "-"
-            return
-        }
-
-        val desiredWordLength = newSearchTerm.toIntOrNull()
-        if (desiredWordLength != null) {
-            results = dataSet.filter { it.getEnglishWordLength() <= desiredWordLength }.map { it.toString() }
-        } else {
-            results = dataSet.filter { it.matchesSearchTerm(newSearchTerm) }
-                    .map { it.toString() }
-        }
-
-        resultQuantityString = results.size.toString()
     }
 
-    // TODO TASK 8 update the message to represent the new result list
-    // TODO if empty -> return "Kein Ergebnisse"
-    // TODO if 1-3 results -> return "Eins davon sollte passen"
-    // TODO if more than 3 results -> return "Viel zu viele Ergebnisse"
-    // HINT use "when" keyword
     fun onResultListUpdated() {
-        message = when (results.count()) {
-            0 -> "Kein Ergebnisse"
-            in 1..3 -> "Eins davon sollte passen"
-            else -> "Viel zu viele Ergebnisse"
-        }
+        // TODO TASK 8 update the message to represent the new result list
+        // TODO if empty -> return "Kein Ergebnisse"
+        // TODO if 1-3 results -> return "Eins davon sollte passen"
+        // TODO if more than 3 results -> return "Viel zu viele Ergebnisse"
+        // HINT use "when" keyword
+
+
     }
 
     // TODO TASK 9 add a property "sound" to "AnimalEntry", and return the sound here
     // TODO e.g. "Miaooo" for a cat
-    fun getAnimalSoundOf(animal: AnimalEntry) = "Wufff!"
+    fun getAnimalSoundOf(animal: AnimalEntry) = ""
 }
