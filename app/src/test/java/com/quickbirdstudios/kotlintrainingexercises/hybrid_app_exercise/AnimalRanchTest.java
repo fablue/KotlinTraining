@@ -14,13 +14,6 @@ import org.junit.Test;
  */
 
 public class AnimalRanchTest {
-
-
-    @Before
-    public void setUp() {
-
-    }
-
     @Test
     public void runAnimalRanchExample() throws Exception {
         Farmer farmer = new Farmer();
