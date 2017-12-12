@@ -30,11 +30,7 @@ class ControlFlow {
     //  TODO return true if a baby dog was found, false otherwise
 //    TODO NOW solution, and add to slides
     fun hasAnyBabyDog(dogs: List<Dog>): Boolean {
-        for (dog in dogs) {
-            if (dog.age <= 1)return true
-        }
-
-        return false
+        TODO("Please implement the task :-)")
     }
 
 
@@ -57,7 +53,7 @@ class ControlFlow {
 
     @Test
     fun testHasAnyBabyDog() {
-        assertTrue(hasAnyBabyDog(listOf(Dog("Tom",age = 5),Dog("Tom",age = 1))))
-        assertFalse(hasAnyBabyDog(listOf(Dog("Tom",age = 5),Dog("Tom",age = 7),Dog("Tom",age = 9))))
+        assertTrue(hasAnyBabyDog(listOf(Dog("Tom", age = 5), Dog("Tom", age = 1))))
+        assertFalse(hasAnyBabyDog(listOf(Dog("Tom", age = 5), Dog("Tom", age = 7), Dog("Tom", age = 9))))
     }
 }

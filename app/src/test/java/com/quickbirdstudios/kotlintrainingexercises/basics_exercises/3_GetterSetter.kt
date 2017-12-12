@@ -12,13 +12,23 @@ class KotlinDog(name: String, val type: String = "Labrador", var age: Int = 5) {
     //    TODO TASK 2 create setter for name: Throw an "IllegalArgumentException" if the new name is empty
     //    HINT: throwing exceptions happens like in java with `throw IllegalArgumentException(...)`
     var name = name
-        get() = field.toUpperCase()
-        set(newName) {
-            if (newName.isEmpty()) throw IllegalArgumentException()
 
-            field = newName
-        }
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*

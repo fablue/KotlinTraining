@@ -1,6 +1,5 @@
 package com.quickbirdstudios.kotlinbasics.exercises
 
-import com.quickbirdstudios.kotlinbasics.barkify
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -10,12 +9,12 @@ import org.junit.Test
  */
 class Extensions {
     // TODO TASK 1 create extension function "scream" for String
-    // TODO TASK 1 turn all letters UPPERCASE and add "!!!" at the end
+    // TODO TASK turn all letters UPPERCASE and add "!!!" at the end
     // HINT use "test".toUpperCase() function on the string
-    // TODO TASK 1 YOUR CODE BEGIN
 
 
-    // TODO TAKS 1 YOUR CODE END
+    // add code here for TASK 1 ...
+
 
     // TODO TASK 2 apply your extension to the "text"
     private fun applyAllCapsExtension(text: String): String {
@@ -29,9 +28,6 @@ class Extensions {
 
         assertEquals("WUFF WUFF WUFF WUFF WUFF!!!", allCapsDogLanguage)
     }
-
-
-
 
 
     /*
